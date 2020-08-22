@@ -27,6 +27,12 @@ def show_answer(answer, selected_word, missing_letter_index):
     """
     TODO Step 1 - Show better results messages
     """
+    if answer == selected_word[missing_letter_index]:
+        print("The word was:", selected_word)
+        print("Well done! You are awesome!")
+    else:
+        print("The word was:", selected_word)
+        print("Wrong! Do better next time.")
     pass
 
 
@@ -35,7 +41,10 @@ def ask_file_name():
     """
     TODO Step 2 - Update to prompt user for filename to use for words
     """
-    return 'TODO.txt'
+    file_name = input("Words file? [leave empty to use short_words.txt] : ")
+    if file_name == '':
+        return 'short_words.txt'
+    return file_name
 
 
 def run_game(file_name):
